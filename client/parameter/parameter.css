@@ -1,0 +1,16 @@
+.parameter
+{
+  text-align: center;
+  width:300px;
+  border-radius:5px;
+  border: solid 1px #B6DA8F;
+}
+
+.parameter h1
+{
+  font-size:12px;
+  margin:0px;
+  padding:0px;
+  font-weight: normal;
+  background-color: #B6DA8F;
+}
