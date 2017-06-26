@@ -7,7 +7,11 @@
         {{> parameterGraphWrapper}}
       </div>
       <div class="recommendations">
-        {{> recommendations}}
+        <ul>
+        {{#each recommendations}}
+        <li>{{> recommendations}}</li>
+        {{/each}}
+      </ul>
       </div>
     </div>
 </template>

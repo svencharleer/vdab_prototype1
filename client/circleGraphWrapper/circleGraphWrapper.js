@@ -9,28 +9,20 @@ Template.circleGraphWrapper.rendered = function(){
 
 
   Tracker.autorun(function(){
-    var percent = Session.get("testValue");
-    if(percent == undefined) return;
+    var success = Session.get("successValue");
+    var potential = Session.get("potentialValue");
+    if(success == undefined) return;
+    if(potential == undefined) return;
     //console.log("percet", percent);
-    svg.select("rect")
+    if(potential < success) potential = success;
+    svg.select("rect.potential")
         .transition()
-        .attr("height", (height+padding/2) * (1.0 - percent))
+        .attr("height", (height+padding/2) * (1.0 - potential))
       ;
-    svg.select("text")
-      .transition()
-      .attr("fill", function(){
-        if(percent > .5)
-          return "white";
-        else return "#88B458";
-      })
-      .attr("y", function(){
-        var diff = 0;
-        if(percent > .5)
-          diff = 20;
-        if(percent > .9)
-          diff = 25;
-        return diff + (height+padding/2) * (1.0 - percent)-3;
-      })
-      .text(parseInt(100 * percent) + "%");
+
+      svg.select("rect.success")
+          .transition()
+          .attr("height", (height+padding/2) * (1.0 - success))
+        ;
   });
 }

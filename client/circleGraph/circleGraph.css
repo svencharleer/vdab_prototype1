@@ -2,3 +2,8 @@
 {
   text-align: center;
 }
+
+circle.potential
+{
+  opacity: .2;
+}

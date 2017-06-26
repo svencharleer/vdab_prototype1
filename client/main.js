@@ -6,7 +6,8 @@ import './main.html';
 
 Template.main.onCreated(function helloOnCreated() {
 
-  Session.set("testValue",.3);
+  Session.set("successValue",.6);
+  Session.set("potentialValue",.5);
   Session.set("title","Leeftijd");
 });
 
@@ -14,12 +15,24 @@ Template.main.helpers({
   parameters() {
     var tempList = [
       {
-        name:"Leeftijd",
-        color:"green"
+        name:"Talen",
+        color:"green",
+        recommendations: [
+          {name: "Engels",
+           percent: 4},
+           {name: "Frans",
+            percent: 2},
+        ]
       },
       {
-        name:"Dagen Werkloos",
-        color:"red"
+        name:"Regio",
+        color:"red",
+        recommendations: [
+          {name: "Antwerpen",
+           percent: 8},
+           {name: "Brussel",
+            percent: 10},
+        ]
       }
     ];
     return tempList;
