@@ -4,20 +4,30 @@ import { Session } from 'meteor/session'
 
 import './main.html';
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
+Template.main.onCreated(function helloOnCreated() {
+
   Session.set("testValue",.3);
   Session.set("title","Leeftijd");
 });
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
+Template.main.helpers({
+  parameters() {
+    var tempList = [
+      {
+        name:"Leeftijd",
+        color:"green"
+      },
+      {
+        name:"Dagen Werkloos",
+        color:"red"
+      }
+    ];
+    return tempList;
+
+  }
 });
 
-Template.hello.events({
+Template.main.events({
   'click button'(event, instance) {
     // increment the counter when button is clicked
     instance.counter.set(instance.counter.get() + 1);

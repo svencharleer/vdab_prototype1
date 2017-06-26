@@ -1,7 +1,7 @@
 import d3 from 'd3'
 import chroma from 'chroma-js'
 Template.parameterGraphWrapper.onRendered(function(){
-  
+
   var instance = this;
   instance.autorun(function(){
   var svg = d3.select(instance.find("svg"));
@@ -27,8 +27,17 @@ Template.parameterGraphWrapper.onRendered(function(){
   )
   var max =  500;
   var userLocation = 2;
-  updateParameterGraph2(graph, userLocation, max);
+  updateParameterGraph(graph, userLocation, max);
 
   });
 
 });
+
+Template.parameterGraphWrapper.helpers({
+  graphType() {
+    return "parameterGraph";
+  },
+  /*color() {
+    return "green";
+  }*/
+})

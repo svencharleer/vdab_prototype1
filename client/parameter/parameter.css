@@ -3,7 +3,7 @@
   text-align: center;
   width:300px;
   border-radius:5px;
-  border: solid 1px #B6DA8F;
+
 }
 
 .parameter h1
@@ -12,5 +12,19 @@
   margin:0px;
   padding:0px;
   font-weight: normal;
+
+}
+
+.green {
+  border: solid 1px #B6DA8F;
+}
+.green h1{
   background-color: #B6DA8F;
+}
+
+.red {
+  border: solid 1px #FB7C72;
+}
+.red h1{
+  background-color: #FB7C72;
 }
