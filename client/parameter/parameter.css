@@ -3,6 +3,7 @@
   text-align: center;
   width:300px;
   border-radius:5px;
+  display: inline-block;
 
 }
 
@@ -27,4 +28,36 @@
 }
 .red h1{
   background-color: #FB7C72;
+}
+
+.graph {
+  width:100%;
+  text-align:center;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+.graph span {
+  font-size:10px;
+  display:inline-block;;
+  width:10px;
+  text-align: center;
+}
+
+.recommendations {
+  text-align: left;
+}
+
+.recommendations ul{
+  margin:0;
+  padding:0;
+  width:100%;
+
+}
+
+.recommendations li{
+  border-top:dotted 1px grey;
+  width:100%;
+
+  padding-bottom:2px;
 }

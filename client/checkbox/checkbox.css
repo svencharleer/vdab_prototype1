@@ -1,0 +1,16 @@
+.checkbox
+{
+  margin-left:auto;
+  margin-right:auto;
+    margin-top: 20px;
+  width:15px;
+  height:15px;
+  border: solid 1px #C4C4C4;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.checkbox > i{
+  font-size: 20px;
+    line-height: .4;
+}

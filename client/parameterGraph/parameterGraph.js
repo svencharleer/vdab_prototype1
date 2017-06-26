@@ -11,7 +11,7 @@ Template.parameterGraph.onRendered(function(){
   var barSelect = "#020202";
   var colorScale = chroma.scale(["#0099FF","#F566FF"]);
   var maxHeight = 30;
-  var barWidth = 10;
+  var barWidth = 15;
 
   //create basic graph without data
 
@@ -57,7 +57,7 @@ updateParameterGraph = function(graph, userLocation, max)
   var barSelect = "#87D9E9";
 
   var maxHeight = 30;
-  var barWidth = 10;
+  var barWidth = 15;
   graph.transition()
               .attr("height",function(d){
 

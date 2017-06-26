@@ -6,7 +6,7 @@ Template.parameterGraph2.onRendered(function(){
 
   var colorScale = chroma.scale(["#EFFFF4","#B8E986"]);
   var maxHeight = 30;
-  var barWidth = 15;
+  var barWidth = 20;
 
   //create basic graph without data
 
@@ -34,6 +34,8 @@ Template.parameterGraph2.onRendered(function(){
 
 
                   })
+                  .attr("rx",2)
+                  .attr("ry",2)
                   .attr("fill", function(d){
 
 ;                         return colorScale(d.count/max).hex();
@@ -61,7 +63,7 @@ updateParameterGraph2 = function(graph, userLocation, max)
   var barSelect = "#87D9E9";
   var colorScale = chroma.scale(["#EFFFF4","#B8E986"]);
   var maxHeight = 30;
-  var barWidth = 15;
+  var barWidth = 20;
   graph.transition()
                 .attr("height",function(d){
 
@@ -84,11 +86,14 @@ updateParameterGraph2 = function(graph, userLocation, max)
                   else {
                     return "#B8E986";
                 }
+
               }
+
               )
+              .attr("stroke-width",2)
                 .attr("transform",function(d,i){
                     var spacing = 2.0;
-                    return "translate(" + ((d.block) * spacing +   (d.block) * barWidth).toString() + ",0)";
+                    return "translate(" + ((d.block) * spacing +   (d.block) * barWidth).toString() + ",2)";
 
                 });
 }

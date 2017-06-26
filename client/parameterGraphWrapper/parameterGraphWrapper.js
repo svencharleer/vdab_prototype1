@@ -27,7 +27,7 @@ Template.parameterGraphWrapper.onRendered(function(){
   )
   var max =  500;
   var userLocation = 2;
-  updateParameterGraph(graph, userLocation, max);
+  updateParameterGraph2(graph, userLocation, max);
 
   });
 

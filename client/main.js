@@ -6,36 +6,51 @@ import './main.html';
 
 Template.main.onCreated(function helloOnCreated() {
 
-  Session.set("successValue",.6);
-  Session.set("potentialValue",.5);
-  Session.set("title","Leeftijd");
+  var parameters1 = [
+    {
+      name:"Talen",
+      color:"green",
+      recommendations: [
+        {
+          id: "Engels",
+          description: "Leer Engels",
+         percent: .04},
+         {id: "Frans",
+         description: "Leer Frans",
+          percent: .02},
+      ]
+    },
+    {
+      name:"Regio",
+      color:"red",
+      recommendations: [
+        {id: "Antwerpen",
+        description: "Antwerpen",
+         percent: .08},
+         {id: "Brussel",
+         description: "Brussel",
+          percent: .10},
+      ]
+    }
+  ];
+
+
+  Session.set("jobs",[
+    {
+      name:"Poetsvrouw",
+      successValue: .2,
+      potentialValue: .5,
+      parameters: parameters1
+    }
+  ]);
+  Session.set("selectedParameters", {selectedPotential:Session.get("jobs")[0].successValue})
+
 });
 
 Template.main.helpers({
   parameters() {
-    var tempList = [
-      {
-        name:"Talen",
-        color:"green",
-        recommendations: [
-          {name: "Engels",
-           percent: 4},
-           {name: "Frans",
-            percent: 2},
-        ]
-      },
-      {
-        name:"Regio",
-        color:"red",
-        recommendations: [
-          {name: "Antwerpen",
-           percent: 8},
-           {name: "Brussel",
-            percent: 10},
-        ]
-      }
-    ];
-    return tempList;
+    return Session.get("jobs")[0].parameters;
+
 
   }
 });

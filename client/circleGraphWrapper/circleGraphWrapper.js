@@ -9,12 +9,19 @@ Template.circleGraphWrapper.rendered = function(){
 
 
   Tracker.autorun(function(){
-    var success = Session.get("successValue");
-    var potential = Session.get("potentialValue");
+    var success = Session.get("jobs")[0].successValue;
+    var potential = Session.get("jobs")[0].potentialValue;
+    var selectedPotential = Session.get("selectedParameters").selectedPotential;
     if(success == undefined) return;
     if(potential == undefined) return;
     //console.log("percet", percent);
+
     if(potential < success) potential = success;
+
+    svg.select("rect.selectedpotential")
+        .transition()
+        .attr("height", (height+padding/2) * (1.0 - selectedPotential))
+      ;
     svg.select("rect.potential")
         .transition()
         .attr("height", (height+padding/2) * (1.0 - potential))
@@ -24,5 +31,7 @@ Template.circleGraphWrapper.rendered = function(){
           .transition()
           .attr("height", (height+padding/2) * (1.0 - success))
         ;
+
+
   });
 }
