@@ -81,11 +81,11 @@ updateParameterGraph2 = function(graph, userLocation, max)
               ;                         return colorScale(d.count/max).hex();
                 })
                 .attr("stroke",function(d){
-                  if(d.block != userLocation)
-                    return "white";
-                  else {
-                    return "#B8E986";
-                }
+                  if(d.block == userLocation)
+                    return colorScale(d.count/max).hex();
+                  //else {
+                  //  return "#B8E986";
+                //}
 
               }
 

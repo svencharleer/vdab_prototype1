@@ -33,8 +33,11 @@
 .graph {
   width:100%;
   text-align:center;
-  margin-top:5px;
-  margin-bottom:5px;
+  margin:0;
+  background-color: #474747;
+  padding-top:5px;
+  padding-bottom:5px;
+  color:white;
 }
 
 .graph span {
@@ -58,6 +61,6 @@
 .recommendations li{
   border-top:dotted 1px grey;
   width:100%;
-
+  list-style: none;
   padding-bottom:2px;
 }
