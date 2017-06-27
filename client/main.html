@@ -12,7 +12,9 @@
 </body>
 
 <template name="main">
-  {{> circleGraphWrapper}}
+  {{#each jobs}}
+  {{> job}}
+  {{/each}}
   <br/>
   <h2>actionnable</h2>
   {{#each actionnable}}
@@ -23,4 +25,8 @@
   {{#each nonactionnable}}
     {{> parameter}}
   {{/each}}
+</template>
+
+<template name="job">
+    {{> circleGraphWrapper}}
 </template>

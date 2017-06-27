@@ -93,33 +93,44 @@ Template.main.onCreated(function helloOnCreated() {
 
   Session.set("jobs",[
     {
+      id:"Poetsvrouw",
       name:"Poetsvrouw",
       successValue: .2,
       potentialValue: .5,
       actionnable: actionnable,
       nonactionnable: nonactionnable
+    },
+    {
+      id:"Verkoop",
+      name:"Verkoop",
+      successValue: .4,
+      potentialValue: .8,
+      actionnable: nonactionnable,
+      nonactionnable: nonactionnable
     }
   ]);
-  Session.set("selectedParameters", {selectedPotential:Session.get("jobs")[0].successValue})
+
 
 });
 
 Template.main.helpers({
+  jobs(){
+    return Session.get("jobs");
+  },
+
   actionnable() {
-    return Session.get("jobs")[0].actionnable;
-
-
+    return Session.get("activeJob").actionnable;
   },
   nonactionnable() {
-    return Session.get("jobs")[0].nonactionnable;
-
-
+    return Session.get("activeJob").nonactionnable;
   }
 });
 
-Template.main.events({
-  'click button'(event, instance) {
+Template.job.events({
+  'click'(event, instance) {
     // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
+    Session.set("activeJob", instance.data);
+    Session.set("selectedParameters", {selectedPotential:Session.get("activeJob").successValue})
+
   },
 });

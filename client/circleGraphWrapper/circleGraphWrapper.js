@@ -5,16 +5,21 @@ Template.circleGraphWrapper.rendered = function(){
   var height = 100;
   var width = 100;
   var padding = 10;
+  var instance = this;
 
 
 
   Tracker.autorun(function(){
-    var success = Session.get("jobs")[0].successValue;
-    var potential = Session.get("jobs")[0].potentialValue;
-    var selectedPotential = Session.get("selectedParameters").selectedPotential;
+    if(Session.get("activeJob") == undefined) return;
+
+    var success = instance.data.successValue;//Session.get("jobs")[0].successValue;
+    var potential = instance.data.potentialValue;//Session.get("jobs")[0].potentialValue;
+    var selectedPotential = success;
+    if(Session.get("activeJob").id == instance.data.id)
+      selectedPotential = Session.get("selectedParameters").selectedPotential;
     if(success == undefined) return;
     if(potential == undefined) return;
-    //console.log("percet", percent);
+
 
     if(potential < success) potential = success;
 
@@ -35,3 +40,9 @@ Template.circleGraphWrapper.rendered = function(){
 
   });
 }
+
+Template.circleGraphWrapper.helpers({
+  isActiveJob(){
+    return this.id == Session.get("activeJob").id;
+  }
+});

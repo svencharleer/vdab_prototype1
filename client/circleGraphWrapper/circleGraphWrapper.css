@@ -5,3 +5,11 @@
   font-weight: normal;
   margin-bottom: 5px;
 }
+
+.circleGraphWrapper{
+  display:inline-block;;
+}
+
+.selected{
+  border:solid 1px black;
+}

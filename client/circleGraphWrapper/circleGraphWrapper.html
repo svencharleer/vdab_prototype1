@@ -1,6 +1,6 @@
 <template name="circleGraphWrapper">
-  <div class="circleGraphWrapper">
-<h1>Poetsvrouw</h1>
+  <div class="circleGraphWrapper {{#if isActiveJob}}selected{{/if}}">
+<h1>{{name}}</h1>
   {{> circleGraph}}
 </div>
 </template>
