@@ -61,7 +61,7 @@ updateParameterGraph2 = function(graph, userLocation, max)
 {
   var bar = "#CBCBCB";
   var barSelect = "#87D9E9";
-  var colorScale = chroma.scale(["#EFFFF4","#B8E986"]);
+  var colorScale = chroma.scale(["#FFD327","#B8E986"]);
   var maxHeight = 30;
   var barWidth = 20;
   graph.transition()

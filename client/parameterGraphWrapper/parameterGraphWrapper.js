@@ -11,32 +11,23 @@ Template.parameterGraphWrapper.onRendered(function(){
 
 
   graph.data(
-    [
-      {block:0, x: 20, count:20},
-      {block:1, x: 25, count:100},
-      {block:2, x: 30, count:300},
-      {block:3, x: 35, count:200},
-      {block:4, x: 40, count:0},
-      {block:5, x: 45, count:0},
-      {block:6, x: 50, count:50},
-      {block:7, x: 55, count:500},
-      {block:8, x: 60, count:100},
-      {block:9, x: 65, count:20},
-
-    ]
+    instance.data.segments
   )
-  var max =  500;
-  var userLocation = 2;
-  updateParameterGraph2(graph, userLocation, max);
+  var max =  instance.data.max;
+  var userLocation = instance.data.clientPosition;
+  updateParameterGraph(graph, userLocation, max);
 
   });
 
 });
 
 Template.parameterGraphWrapper.helpers({
-  graphType() {
-    return "parameterGraph";
+  min() {
+    return this.segments[0].x;
   },
+  max() {
+    return this.segments[9].x;
+  }
   /*color() {
     return "green";
   }*/

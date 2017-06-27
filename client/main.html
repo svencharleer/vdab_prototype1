@@ -14,7 +14,13 @@
 <template name="main">
   {{> circleGraphWrapper}}
   <br/>
-  {{#each parameters}}
+  <h2>actionnable</h2>
+  {{#each actionnable}}
+    {{> parameter}}
+  {{/each}}
+  <br/><br/>
+  <h2>non-actionnable</h2>
+  {{#each nonactionnable}}
     {{> parameter}}
   {{/each}}
 </template>

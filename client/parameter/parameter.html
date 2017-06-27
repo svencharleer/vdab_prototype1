@@ -4,7 +4,9 @@
         {{name}}
       </h1>
       <div class="graph">
-        <span>0</span>{{> parameterGraphWrapper}}<span>10</span>
+        {{#with distribution}}
+        {{> parameterGraphWrapper}}
+        {{/with}}
       </div>
       <div class="recommendations">
         <ul>

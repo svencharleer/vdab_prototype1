@@ -26,7 +26,9 @@ Template.parameterGraph.onRendered(function(){
   var g = svg.append("g");
   var graph = g.selectAll("rect")
                       .data(startValues);
-
+  var div = d3.select("body").append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0);
   graph.enter().append("rect")
                   .attr("height",function(d){
 
@@ -46,7 +48,20 @@ Template.parameterGraph.onRendered(function(){
                       var spacing = 2.0;
                       return "translate(" + ((d.block) * spacing +   (d.block) * barWidth).toString() + ","+ (1.0 - d.count/max) * maxHeight+ ")";
 
-                  });
+                  })
+                  .on("mouseover", function(d) {
+                div.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                div	.html("waarde: " + d.x + " " + "<br/>aantal: " + d.count)
+                    .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px");
+                })
+            .on("mouseout", function(d) {
+                div.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            });
 
 
 });
@@ -58,6 +73,8 @@ updateParameterGraph = function(graph, userLocation, max)
 
   var maxHeight = 30;
   var barWidth = 15;
+
+
   graph.transition()
               .attr("height",function(d){
 
@@ -77,5 +94,6 @@ updateParameterGraph = function(graph, userLocation, max)
                   var spacing = 2.0;
                   return "translate(" + ((d.block) * spacing +   (d.block) * barWidth).toString() + ","+ (1.0 - d.count/max) * maxHeight+ ")";
 
-              });
+              })
+              ;
 }
