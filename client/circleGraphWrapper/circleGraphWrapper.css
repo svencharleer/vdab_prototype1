@@ -8,8 +8,13 @@
 
 .circleGraphWrapper{
   display:inline-block;;
+  margin:0px;
+  margin-left:5px;
+  margin-top:5px;
+
 }
 
 .selected{
-  border:solid 1px black;
+  border-bottom: solid 4px #87D9E9;
+
 }

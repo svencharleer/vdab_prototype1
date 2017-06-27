@@ -110,6 +110,8 @@ Template.main.onCreated(function helloOnCreated() {
     }
   ]);
 
+  Session.set("hiddenJobs", {});
+
 
 });
 
@@ -117,11 +119,16 @@ Template.main.helpers({
   jobs(){
     return Session.get("jobs");
   },
-
+  jobVisible(id)
+  {
+    return Session.get("hiddenJobs")[id] != true;
+  },
   actionnable() {
+    if(Session.get("activeJob") == undefined) return undefined;
     return Session.get("activeJob").actionnable;
   },
   nonactionnable() {
+    if(Session.get("activeJob") == undefined) return undefined;
     return Session.get("activeJob").nonactionnable;
   }
 });
@@ -133,4 +140,27 @@ Template.job.events({
     Session.set("selectedParameters", {selectedPotential:Session.get("activeJob").successValue})
 
   },
+});
+
+Template.jobhider.events({
+  'click'(event, instance) {
+    // increment the counter when button is clicked
+    Session.set("activeJob", undefined);
+    Session.set("selectedParameters", undefined);
+    var hidden = Session.get("hiddenJobs")[instance.data.id];
+    if(hidden == undefined || hidden == false) hidden = true;
+    else hidden = !hidden;
+    var hiddenJobs = Session.get("hiddenJobs");
+    hiddenJobs[instance.data.id] = hidden;
+    Session.set("hiddenJobs", hiddenJobs);
+  },
+  'mouseover'(event, instance) {
+    instance.$(".hide").show();
+    instance.$(".show").hide();
+  },
+  'mouseleave'(event, instance) {
+    instance.$(".hide").hide();
+    instance.$(".show").show();
+  }
+
 });

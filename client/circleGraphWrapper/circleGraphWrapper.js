@@ -43,6 +43,8 @@ Template.circleGraphWrapper.rendered = function(){
 
 Template.circleGraphWrapper.helpers({
   isActiveJob(){
+    if(this == undefined) return;
+    if(Session.get("activeJob") == undefined) return;
     return this.id == Session.get("activeJob").id;
   }
 });
