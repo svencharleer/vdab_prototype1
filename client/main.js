@@ -111,7 +111,7 @@ Template.main.onCreated(function helloOnCreated() {
   ]);
 
   Session.set("hiddenJobs", {});
-
+  Session.set("showHiddenJobs", false);
 
 });
 
@@ -121,7 +121,8 @@ Template.main.helpers({
   },
   jobVisible(id)
   {
-    return Session.get("hiddenJobs")[id] != true;
+    if(Session.get("showHiddenJobs") && Session.get("hiddenJobs")[id]) return "hiddenJobVisible";
+    if(Session.get("hiddenJobs")[id]) return "hiddenJob";
   },
   actionnable() {
     if(Session.get("activeJob") == undefined) return undefined;
@@ -163,4 +164,20 @@ Template.jobhider.events({
     instance.$(".show").show();
   }
 
+});
+
+Template.showHiddenJobs.helpers(
+  {
+    text(){
+      return Session.get("showHiddenJobs") == true ? "toon selectie" : "toon alles"; 
+    }
+  }
+);
+
+Template.showHiddenJobs.events({
+  'click'(event, instance) {
+    var showHiddenJobs = Session.get("showHiddenJobs");
+    showHiddenJobs = ! showHiddenJobs;
+    Session.set("showHiddenJobs", showHiddenJobs);
+  }
 });

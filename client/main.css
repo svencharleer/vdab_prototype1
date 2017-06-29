@@ -29,6 +29,7 @@ h2 {
   padding:0;
   margin:0;
   font-size:8px;
+  cursor: pointer;
 
 }
 
@@ -37,4 +38,22 @@ h2 {
   width:150px;
   text-align: center;
   display:inline-block;
+}
+
+.hiddenJob
+{
+  display:none;
+}
+
+.hiddenJobVisible
+{
+  opacity: .2;
+}
+
+#menu {
+  width:100%;
+  text-align:right;
+  font-size:12px;
+  text-decoration: underline;
+  cursor: pointer;
 }
