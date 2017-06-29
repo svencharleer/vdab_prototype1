@@ -1,5 +1,11 @@
 import { Meteor } from 'meteor/meteor';
-
+var data = {};
 Meteor.startup(() => {
-  // code to run on server at startup
+  data = JSON.parse(Assets.getText('data.json'));
 });
+
+Meteor.methods({
+    data: function () {
+      return data;
+    }
+    });

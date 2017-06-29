@@ -1,0 +1,138 @@
+[
+  {
+    "id":"Poetsvrouw",
+    "name":"Poetsvrouw",
+    "successValue": 0.2,
+    "potentialValue": 0.5,
+    "actionnable": [
+      {
+        "name":"Talen",
+        "color":"green",
+        "recommendations": [
+          {
+            "id": "Engels",
+            "description": "Leer Engels",
+           "percent": 0.04},
+           {"id": "Frans",
+           "description": "Leer Frans",
+            "percent": 0.02}
+        ],
+        "distribution": { "segments": [{"block":0, "x": 0, "count":0},
+          {"block":1, "x": 1, "count":1},
+          {"block":2, "x": 2, "count":2},
+          {"block":3, "x": 3, "count":3},
+          {"block":4, "x": 4, "count":4},
+          {"block":5, "x": 5, "count":4},
+          {"block":6, "x": 6, "count":4},
+          {"block":7, "x": 7, "count":4},
+          {"block":8, "x": 8, "count":4},
+          {"block":9, "x": 9, "count":4}],
+          "max": 4,
+          "clientPosition": 2
+        }
+      },
+      {
+        "name":"Regio",
+        "color":"red",
+        "recommendations": [
+          {"id": "Antwerpen",
+          "description": "Antwerpen",
+           "percent": 0.08},
+           {"id": "Brussel",
+           "description": "Brussel",
+            "percent": 0.10}
+        ],
+        "distribution": { "segments": [{"block":0, "x": 0, "count":20},
+          {"block":1, "x": 1, "count":10},
+          {"block":2, "x": 2, "count":20},
+          {"block":3, "x": 3, "count":0},
+          {"block":4, "x": 4, "count":0},
+          {"block":5, "x": 5, "count":0},
+          {"block":6, "x": 6, "count":5},
+          {"block":7, "x": 7, "count":7},
+          {"block":8, "x": 8, "count":15},
+          {"block":9, "x": 9, "count":1}],
+          "max": 20,
+          "clientPosition": 8
+        }
+      }],
+    "nonactionnable": [
+    {
+      "name":"Leeftijd",
+      "color":"red",
+      "recommendations": [
+
+      ],
+      "distribution": { "segments": [{"block":0, "x": 20, "count":20},
+        {"block":1, "x": 25, "count":100},
+        {"block":2, "x": 30, "count":300},
+        {"block":3, "x": 35, "count":200},
+        {"block":4, "x": 40, "count":0},
+        {"block":5, "x": 45, "count":0},
+        {"block":6, "x": 50, "count":50},
+        {"block":7, "x": 55, "count":500},
+        {"block":8, "x": 60, "count":100},
+        {"block":9, "x": 65, "count":20}],
+        "max": 500,
+        "clientPosition": 2
+      }
+    }
+  ]
+  },
+  {
+    "id":"Verkoop",
+    "name":"Verkoop",
+    "successValue": 0.4,
+    "potentialValue": 0.8,
+    "actionnable": [
+      {
+        "name":"Talen",
+        "color":"green",
+        "recommendations": [
+          {
+            "id": "Engels",
+            "description": "Leer Engels",
+           "percent": 0.04},
+           {"id": "Frans",
+           "description": "Leer Frans",
+            "percent": 0.02}
+        ],
+        "distribution": { "segments": [{"block":0, "x": 0, "count":0},
+          {"block":1, "x": 1, "count":1},
+          {"block":2, "x": 2, "count":2},
+          {"block":3, "x": 3, "count":3},
+          {"block":4, "x": 4, "count":4},
+          {"block":5, "x": 5, "count":4},
+          {"block":6, "x": 6, "count":4},
+          {"block":7, "x": 7, "count":4},
+          {"block":8, "x": 8, "count":4},
+          {"block":9, "x": 9, "count":4}],
+          "max": 4,
+          "clientPosition": 2
+        }
+      }
+      ],
+    "nonactionnable": [
+    {
+      "name":"Leeftijd",
+      "color":"red",
+      "recommendations": [
+
+      ],
+      "distribution": { "segments": [{"block":0, "x": 20, "count":20},
+        {"block":1, "x": 25, "count":100},
+        {"block":2, "x": 30, "count":300},
+        {"block":3, "x": 35, "count":200},
+        {"block":4, "x": 40, "count":0},
+        {"block":5, "x": 45, "count":0},
+        {"block":6, "x": 50, "count":50},
+        {"block":7, "x": 55, "count":500},
+        {"block":8, "x": 60, "count":100},
+        {"block":9, "x": 65, "count":20}],
+        "max": 500,
+        "clientPosition": 2
+      }
+    }
+  ]
+  }
+]
