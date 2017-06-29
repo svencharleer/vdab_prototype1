@@ -57,3 +57,11 @@ h2 {
   text-decoration: underline;
   cursor: pointer;
 }
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items:baseline;
+  flex-wrap: wrap;
+}

@@ -55,6 +55,34 @@
           "max": 20,
           "clientPosition": 8
         }
+      },
+      {
+        "name":"Studies",
+        "color":"green",
+        "recommendations": [
+          {"id": "Boekhouden",
+          "description": "Boekhouden",
+           "percent": 0.01},
+           {"id": "Management",
+           "description": "Management",
+            "percent": 0.20},
+            {"id": "Social Skills",
+            "description": "Social Skills",
+             "percent": 0.03}
+        ],
+        "distribution": { "segments": [{"block":0, "x": 0, "count":20},
+          {"block":1, "x": 1, "count":10},
+          {"block":2, "x": 2, "count":20},
+          {"block":3, "x": 3, "count":0},
+          {"block":4, "x": 4, "count":0},
+          {"block":5, "x": 5, "count":0},
+          {"block":6, "x": 6, "count":5},
+          {"block":7, "x": 7, "count":7},
+          {"block":8, "x": 8, "count":15},
+          {"block":9, "x": 9, "count":1}],
+          "max": 20,
+          "clientPosition": 8
+        }
       }],
     "nonactionnable": [
     {
