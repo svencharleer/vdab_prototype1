@@ -8,6 +8,8 @@
 ## App overview
 Simple Meteor app using dummy json data file. Blaze templates with D3.js visualisations.
 
+![ScreenShot](https://raw.githubusercontent.com/svencharleer/vdab_prototype1/master/screenshots/v1.png)
+
 Click on a job graph to show detailed parameter data. Click on cross (hover over small dot to hide job). Select recommendations to update main visualisation.
 
 ## Structure
