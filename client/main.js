@@ -6,10 +6,14 @@ import './main.html';
 
 Template.main.onCreated(function helloOnCreated() {
 
-  
+
   Meteor.call("data", function(error, data) {
     Session.set("jobs",data);
-    console.log("test",data);
+    //console.log("jobs",data);
+  });
+  Meteor.call("rawParameterData", function(error, data){
+    Session.set("rawParameterData", data);
+    //console.log("rawParameterData",data);
   });
 
 
@@ -40,7 +44,7 @@ Template.main.helpers({
 
 Template.job.events({
   'click'(event, instance) {
-    // increment the counter when button is clicked
+
     Session.set("activeJob", instance.data);
     Session.set("selectedParameters", {selectedPotential:Session.get("activeJob").successValue})
 
@@ -49,7 +53,7 @@ Template.job.events({
 
 Template.jobhider.events({
   'click'(event, instance) {
-    // increment the counter when button is clicked
+
     Session.set("activeJob", undefined);
     Session.set("selectedParameters", undefined);
     var hidden = Session.get("hiddenJobs")[instance.data.id];

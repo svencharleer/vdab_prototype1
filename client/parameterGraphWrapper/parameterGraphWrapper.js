@@ -4,18 +4,18 @@ Template.parameterGraphWrapper.onRendered(function(){
 
   var instance = this;
   instance.autorun(function(){
-  var svg = d3.select(instance.find("svg"));
-  var graph = svg.select("g").selectAll("rect");
+    var svg = d3.select(instance.find("svg"));
+    var graph = svg.select("g").selectAll("rect");
 
 
+    graph.data(
+      instance.data.segments
+    )
+    var max =  instance.data.max;
+    var userLocation = instance.data.clientPosition;
+    updateParameterGraph(graph, userLocation, max);
 
 
-  graph.data(
-    instance.data.segments
-  )
-  var max =  instance.data.max;
-  var userLocation = instance.data.clientPosition;
-  updateParameterGraph(graph, userLocation, max);
 
   });
 

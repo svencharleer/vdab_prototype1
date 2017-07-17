@@ -1,0 +1,27 @@
+.graph svg{
+  width:300px;
+  height:90px;
+
+}
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 120px;
+    height: 80px;
+    padding: 2px;
+    font-size: 12px;
+    background: white;
+    border: 1px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.positiveArc
+{
+  fill:#B8E986;
+}
+
+.negativeArc
+{
+  fill:#E98686;
+}
