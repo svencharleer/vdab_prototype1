@@ -1,0 +1,42 @@
+.graph svg{
+  width:300px;
+  height:90px;
+  background-color:white;
+
+}
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 120px;
+    height: 80px;
+    padding: 2px;
+    font-size: 8px;
+    background: white;
+    border: 1px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.axisText {
+  fill:grey;
+  font-size:8px;
+}
+
+.graph circle
+{
+  stroke:grey;
+  stroke-width:1px;
+  stroke-dasharray:1;
+}
+
+circle.clientPosition
+{
+  stroke:grey;
+  stroke-width:1px;
+  stroke-dasharray:0;
+}
+
+text.clientPosition
+{
+  text-decoration: underline;
+}

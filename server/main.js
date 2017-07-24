@@ -3,7 +3,7 @@ var data = {};
 var rawParameterData = {};
 Meteor.startup(() => {
   data = JSON.parse(Assets.getText('data.json'));
-  rawParameterData = JSON.parse(Assets.getText('parameter.json'))
+  rawParameterData = JSON.parse(Assets.getText('parameter2.json'))
 });
 
 Meteor.methods({

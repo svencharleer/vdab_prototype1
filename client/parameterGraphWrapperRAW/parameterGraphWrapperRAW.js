@@ -9,11 +9,13 @@ Template.parameterGraphWrapperRAW.onRendered(function(){
 
   var raw = Session.get("rawParameterData");
   var segments = {};
+
+
   for(var i = 0; i < raw.length;i++)
   {
     var offset = raw[i].y;
     var value = raw[i].x;
-
+  
     if(segments[offset] == undefined)
       segments[offset] = {
         name: offset,
@@ -25,7 +27,9 @@ Template.parameterGraphWrapperRAW.onRendered(function(){
         maxPositive:0,
         minNegative:0,
         maxAverage:0,
-        minAverage:0
+        minAverage:0,
+        total:0
+
         };
 
     segments[offset].dataPointCount++;
@@ -42,8 +46,10 @@ Template.parameterGraphWrapperRAW.onRendered(function(){
       if(value > segments[offset].maxPositive)
         segments[offset].maxPositive = value;
     }
+    segments[offset].total += value;
 
   }
+
   var segments = Object.values(segments);
   segments.forEach(function(d){
     var total = 0;
@@ -59,11 +65,13 @@ Template.parameterGraphWrapperRAW.onRendered(function(){
     if(d.dataPointNegativeCount>0)
       d.minAverage = total/d.dataPointNegativeCount;
     console.log(d.minAverage, d.minNegative, d.maxAverage, d.maxPositive);
+    if(d.dataPointCount > 0)
+      d.average = d.total/d.dataPointCount;
   })
 
   //var max =  instance.data.max;
   //var userLocation = instance.data.clientPosition;
-  updateParameterGraph3(segments,instance);
+  updateParameterGraph4(segments,instance);
 
 
 
