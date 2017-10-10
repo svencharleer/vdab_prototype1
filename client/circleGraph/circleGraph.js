@@ -32,7 +32,7 @@ Template.circleGraph.rendered = function(){
             .attr("cx", (padding+width)/2)
             .attr("cy", (padding+height)/2)
             .attr("r", width/2)
-            .attr("fill","grey");
+            .attr("fill","#87D9E9");
         svg.append("rect")
             .attr("class", "selectedpotential")
             .attr("x", 0)

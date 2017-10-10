@@ -11,15 +11,13 @@ Template.main.onCreated(function helloOnCreated() {
     Session.set("jobs",data);
     //console.log("jobs",data);
   });
-  Meteor.call("rawParameterData", function(error, data){
-    Session.set("rawParameterData", data);
-    //console.log("rawParameterData",data);
-  });
+  
 
 
 
   Session.set("hiddenJobs", {});
   Session.set("showHiddenJobs", false);
+  Session.set("hiddenComponents", {});
 
 });
 
@@ -44,7 +42,7 @@ Template.main.helpers({
 
 Template.job.events({
   'click'(event, instance) {
-
+    //Session.set("activeJob", undefined);
     Session.set("activeJob", instance.data);
     Session.set("selectedParameters", {selectedPotential:Session.get("activeJob").successValue})
 

@@ -1,11 +1,11 @@
 <template name="parameter">
-    <div class="parameter {{color}}" >
+    <div id="{{id}}" class="parameter {{color}} {{visible id}}" >
       <h1>
-        {{name}}
+      {{> paramhider }}  {{name}}
       </h1>
       <div class="graph">
         {{#with distribution}}
-        {{> parameterGraphWrapperRAW2}}
+        {{> parameterGraph}}
         {{/with}}
       </div>
       <div class="recommendations">
@@ -16,4 +16,11 @@
       </ul>
       </div>
     </div>
+</template>
+
+
+<template name="paramhider">
+  <div class="paramhider">
+  <span class="hide"  style="display:none; color:red;"><i class="fa fa-times" aria-hidden="true"></i></span><span class="show"><i class="fa fa-times" aria-hidden="true"></i></span>
+</div>
 </template>

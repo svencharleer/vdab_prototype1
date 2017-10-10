@@ -60,3 +60,24 @@
   list-style: none;
   padding-bottom:2px;
 }
+
+
+.paramhider{
+  height:10px;
+  padding:0;
+  margin:0;
+  font-size:8px;
+  cursor: pointer;
+  display:inline-block;
+
+}
+
+.hiddenParam
+{
+  display:none;
+}
+
+.hiddenParamVisible
+{
+  opacity: .2;
+}

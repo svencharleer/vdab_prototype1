@@ -1,0 +1,537 @@
+[
+  {
+    "id":"Poetsvrouw",
+    "name":"Poetsvrouw",
+    "successValue": 0.7,
+    "potentialValue": 0.9,
+    "actionnable": [
+      {
+        "id": 1,
+        "name":"Aantal Gerelateerde Competenties",
+        "color":"green",
+        "recommendations": [
+          {
+            "id": "Leer ruiten wassen",
+            "description": "Leer ruiten wassen",
+           "percent": 0.05},
+           {"id": "Leer zilver opkuisen",
+           "description": "Leer zilver opkuisen",
+            "percent": 0.01}
+        ],
+        "distribution": { "segments": [
+          {
+            "y": "0",
+            "x": -0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "1",
+            "x": -0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "2-3",
+            "x": 0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "4+",
+            "x": 0.0246643233345272,
+            "": ""
+          }
+        ],
+          "clientPosition": 2
+        }
+      },
+      {
+        "id": 2,
+        "name":"Regio",
+        "color":"red",
+        "recommendations": [
+          {"id": "Stad Antwerpen",
+          "description": "Stad Antwerpen",
+           "percent": 0.08},
+          {"id": "Prov. Antwerpen",
+          "description": "Prov. Antwerpen",
+           "percent": 0.05},
+           {"id": "Vlaanderen",
+           "description": "Vlaanderen",
+            "percent": 0.01}
+        ],
+        "distribution": { "segments": [
+          {
+            "y": "Hoboken",
+            "x": -0.0246643233345272,
+            "size": 1
+          },
+          {
+            "y": "Stad Antwerpen",
+            "x": 0.0246643233345272,
+            "size": 1
+          },
+          {
+            "y": "Prov. Antwerpen",
+            "x": 0.0246643233345272,
+            "size": 1
+          },
+          {
+            "y": "Vlaanderen",
+            "x": 0.0246643233345272,
+            "size": 1
+          },
+          {
+            "y": "Belgie",
+            "x": 0.0246643233345272,
+            "size": 1
+          }
+        ],
+          "max": 20,
+          "clientPosition": 0
+        }
+      }
+      ],
+    "nonactionnable": [
+    {
+      "id": 3,
+      "name":"Leeftijd",
+      "color":"red",
+      "recommendations": [
+
+      ],
+      "distribution": { "segments": [
+        {
+          "y": "18-25",
+          "x": 0.0246643233345272,
+          "": ""
+        },
+        {
+          "y": "26-30",
+          "x": 0.0246643233345272,
+          "": ""
+        },
+        {
+          "y": "31-45",
+          "x": 0.0246643233345272,
+          "": ""
+        },
+        {
+          "y": "46-55",
+          "x": -0.0246643233345272,
+          "": ""
+        },
+        {
+          "y": "56-65",
+          "x": -0.0246643233345272,
+          "": ""
+        }
+      ],
+        "max": 500,
+        "clientPosition": 1
+      }
+    }
+  ]
+},
+{
+  "id":"Verkoop",
+  "name":"Verkoop",
+  "successValue": 0.3,
+  "potentialValue": 0.6,
+  "actionnable": [
+    {
+      "id": 4,
+      "name":"Opleiding",
+      "color":"red",
+      "recommendations": [
+        {
+          "id": "Leer MS Excel",
+          "description": "Leer MS Excel",
+         "percent": 0.04},
+         {"id": "Neem cursus Communicatie",
+         "description": "Neem cursus Communicatie",
+          "percent": 0.02}
+      ],
+      "distribution": { "segments": [
+
+        {
+          "y": "Lager Onderwijs",
+          "x": -0.0246643233345272,
+          "": ""
+        },
+        {
+          "y": "Middelbaar Onderwijs",
+          "x": 0.0246643233345272,
+          "": ""
+        },
+        {
+          "y": "Hoger Onderwijs",
+          "x": -0.0246643233345272,
+          "": ""
+        }
+      ],
+        "clientPosition": 0
+      }
+    },
+    {
+      "id": 5,
+      "name":"Regio",
+      "color":"red",
+      "recommendations": [
+        {"id": "Antwerpen",
+        "description": "Antwerpen",
+         "percent": 0.05},
+         {"id": "Brussel",
+         "description": "Brussel",
+          "percent": 0.06}
+      ],
+      "distribution": { "segments": [
+        {
+          "y": "Hoboken",
+          "x": -0.0246643233345272,
+          "size": 1
+        },
+        {
+          "y": "Antwerpen",
+          "x": 0.0246643233345272,
+          "size": 1
+        },
+        {
+          "y": "Brussel",
+          "x": 0.0246643233345272,
+          "size": 1
+        }
+
+      ],
+        "max": 20,
+        "clientPosition": 0
+      }
+    },
+    {
+      "id": 55,
+      "name":"Aantal Attesten",
+      "color":"red",
+      "recommendations": [
+        {"id": "Truckchauffeur",
+        "description": "Truckchauffeur",
+         "percent": 0.05}
+      ],
+      "distribution": { "segments": [
+        {
+          "y": "0",
+          "x": -0.0246643233345272,
+          "size": 1
+        },
+        {
+          "y": "1",
+          "x": 0.0246643233345272,
+          "size": 1
+        },
+        {
+          "y": "2+",
+          "x": 0.0246643233345272,
+          "size": 1
+        }
+
+      ],
+        "max": 20,
+        "clientPosition": 0
+      }
+    },
+    {
+      "id": 56,
+      "name":"Talen",
+      "color":"green",
+      "recommendations": [
+        {"id": "Leer Frans",
+        "description": "Leer Frans",
+         "percent": 0.08},
+         {"id": "Leer Engels",
+         "description": "Leer Engels",
+          "percent": 0.04}
+      ],
+      "distribution": { "segments": [
+        {
+          "y": "ndl",
+          "x": 0.0246643233345272,
+          "size": 1
+        },
+        {
+          "y": "ndl+fr",
+          "x": 0.0246643233345272,
+          "size": 1
+        },
+        {
+          "y": "ndl+eng",
+          "x": 0.0246643233345272,
+          "size": 1
+        },
+        {
+          "y": "ndl+fr+eng",
+          "x": 0.0246643233345272,
+          "size": 1
+        }
+
+      ],
+        "max": 20,
+        "clientPosition": 0
+      }
+    }
+    ],
+  "nonactionnable": [
+  {
+    "id": 6,
+    "name":"Leeftijd",
+    "color":"red",
+    "recommendations": [
+
+    ],
+    "distribution": { "segments": [
+      {
+        "y": "18-25",
+        "x": -0.0246643233345272,
+        "": ""
+      },
+      {
+        "y": "26-30",
+        "x": 0.0246643233345272,
+        "": ""
+      },
+      {
+        "y": "31-45",
+        "x": 0.0246643233345272,
+        "": ""
+      },
+      {
+        "y": "46-55",
+        "x": -0.0246643233345272,
+        "": ""
+      },
+      {
+        "y": "56-65",
+        "x": -0.0246643233345272,
+        "": ""
+      }
+    ],
+      "max": 500,
+      "clientPosition": 0
+    }
+  },
+  {
+    "id": 7,
+    "name":"Aantal dagen werkloos",
+    "color":"green",
+    "recommendations": [
+
+    ],
+    "distribution": { "segments": [
+      {
+        "y": "<10",
+        "x": 0.0246643233345272,
+        "": ""
+      },
+      {
+        "y": "10-30",
+        "x": 0.0246643233345272,
+        "": ""
+      },
+      {
+        "y": "30+",
+        "x": -0.0246643233345272,
+        "": ""
+      }
+    ],
+      "max": 500,
+      "clientPosition": 1
+    }
+  }
+]
+},
+{
+  "id":"Callcenter",
+  "name":"Callcenter",
+  "successValue": 0.2,
+  "potentialValue": 0.9,
+  "actionnable": [
+    {
+      "id": 8,
+      "name":"Opleiding",
+      "color":"red",
+      "recommendations": [
+        {
+          "id": "Leer MS Excel",
+          "description": "Leer MS Excel",
+         "percent": 0.1},
+         {"id": "Neem cursus Communicatie",
+         "description": "Neem cursus Communicatie",
+          "percent": 0.1}
+      ],
+      "distribution": { "segments": [
+        {
+          "y": "Lager Onderwijs",
+          "x": -0.0246643233345272,
+          "": ""
+        },
+        {
+          "y": "Middelbaar Onderwijs",
+          "x": 0.0246643233345272,
+          "": ""
+        },
+        {
+          "y": "Hoger Onderwijs",
+          "x": 0.0246643233345272,
+          "": ""
+        }
+      ],
+        "clientPosition": 0
+      }
+    },
+    {
+      "id": 9,
+      "name":"Regio",
+      "color":"green",
+      "recommendations": [
+        {"id": "Antwerpen",
+        "description": "Antwerpen",
+         "percent": 0.05},
+         {"id": "Brussel",
+         "description": "Brussel",
+          "percent": 0.06}
+      ],
+      "distribution": { "segments": [
+        {
+          "y": "Hoboken",
+          "x": 0.0246643233345272,
+          "size": 1
+        },
+        {
+          "y": "Antwerpen",
+          "x": 0.0246643233345272,
+          "size": 1
+        },
+        {
+          "y": "Brussel",
+          "x": 0.0246643233345272,
+          "size": 1
+        }
+
+      ],
+        "max": 20,
+        "clientPosition": 0
+      }
+    },
+
+    {
+      "id": 10,
+      "name":"Talen",
+      "color":"red",
+      "recommendations": [
+        {"id": "Leer Frans",
+        "description": "Leer Frans",
+         "percent": 0.2},
+         {"id": "Leer Engels",
+         "description": "Leer Engels",
+          "percent": 0.2}
+      ],
+      "distribution": { "segments": [
+        {
+          "y": "ndl",
+          "x": -0.0246643233345272,
+          "size": 1
+        },
+        {
+          "y": "ndl+fr",
+          "x": 0.0246643233345272,
+          "size": 1
+        },
+        {
+          "y": "ndl+eng",
+          "x": -0.0246643233345272,
+          "size": 1
+        },
+        {
+          "y": "ndl+fr+eng",
+          "x": 0.0246643233345272,
+          "size": 1
+        }
+
+      ],
+        "max": 20,
+        "clientPosition": 0
+      }
+    }
+    ],
+  "nonactionnable": [
+  {
+    "id": 11,
+    "name":"Leeftijd",
+    "color":"red",
+    "recommendations": [
+
+    ],
+    "distribution": { "segments": [
+      {
+        "y": "18-25",
+        "x": -0.0246643233345272,
+        "": ""
+      },
+      {
+        "y": "26-30",
+        "x": 0.0246643233345272,
+        "": ""
+      },
+      {
+        "y": "31-45",
+        "x": -0.0246643233345272,
+        "": ""
+      },
+      {
+        "y": "46-55",
+        "x": -0.0246643233345272,
+        "": ""
+      },
+      {
+        "y": "56-65",
+        "x": -0.0246643233345272,
+        "": ""
+      }
+    ],
+      "max": 500,
+      "clientPosition": 0
+    }
+  },
+  {
+    "id": 12,
+    "name":"Aantal dagen werkloos",
+    "color":"red",
+    "recommendations": [
+
+    ],
+    "distribution": { "segments": [
+      {
+        "y": "<10",
+        "x": 0.0246643233345272,
+        "": ""
+      },
+      {
+        "y": "10-30",
+        "x": -0.0246643233345272,
+        "": ""
+      },
+      {
+        "y": "30+",
+        "x": -0.0246643233345272,
+        "": ""
+      }
+    ],
+      "max": 500,
+      "clientPosition": 1
+    }
+  }
+]
+},
+{
+  "id":"Architect",
+  "name":"Architect",
+  "successValue": 0.60,
+  "potentialValue": 0.10
+}
+]

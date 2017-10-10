@@ -8,7 +8,7 @@
 ## App overview
 Simple Meteor app using dummy json data file. Blaze templates with D3.js visualisations.
 
-![ScreenShot](https://raw.githubusercontent.com/svencharleer/vdab_prototype1/master/screenshots/v1.png)
+![ScreenShot](https://raw.githubusercontent.com/svencharleer/vdab_prototype1/master/screenshots/v2.png)
 
 Click on a job graph to show detailed parameter data. Click on cross (hover over small dot to hide job). Select recommendations to update main visualisation.
 
@@ -16,7 +16,7 @@ Click on a job graph to show detailed parameter data. Click on cross (hover over
 All relevant client scripts are in the `client`directory. Start with main.(html|js|css). In the HTML file, every `{{> NAME }}` refers to a new Blaze template within the file or within the directory of the same name. `{{NAME}}` refers to helper functions in the JavaScript file matching the html file/template name.
 
 ## Files
-`/private/data.json`
+`/private/dataEVAL.json`
 Example of current data format client-side.
 
 `/client/`
@@ -40,8 +40,6 @@ Template to visualise entire parameter incl. distribution graph and recommendati
 `/client/parameterGraph/*`
 Template to visualise distribution of 1 parameter. Currently expects the data to be sampled in 10 intervals. This is all temporary as I need to analyse the new data from Stefan and see how we can convert that.
 
-`/client/parameterGraph2/*`
-Same as above, just another visualisation attempt.
 
 `/client/parameterGraphWrapper/*`
 Template to pass the data to the graph above.

@@ -26,7 +26,7 @@ Template.checkbox.events({
 
     var selectedParameters = Session.get("selectedParameters");
     if(selectedParameters == undefined) return;
-    if(selectedParameters[template.data.id] == undefined) return;
+    if(selectedParameters[template.data.id] == undefined) selectedParameters[template.data.id] = {};
     var checked = selectedParameters[template.data.id].checked;
     if(!checked) selectedParameters.selectedPotential += template.data.percent;
     else selectedParameters.selectedPotential -= template.data.percent;

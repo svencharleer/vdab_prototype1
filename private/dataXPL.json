@@ -1,0 +1,161 @@
+[
+  {
+    "id":"job1",
+    "name":"Software Engineer",
+    "successValue": 0.6,
+    "potentialValue": 0.66,
+    "actionnable": [
+      {
+        "id": 1,
+        "name":"Regios",
+        "color":"green",
+        "recommendations": [
+          {
+            "id": "Voorgestelde actie 1",
+            "description": "Voeg Nederland toe",
+           "percent": 0.01},
+           {"id": "Voorgestelde actie 2",
+           "description": "Voeg Wallonie toe",
+            "percent": 0.01}
+        ],
+        "distribution": { "segments": [
+          {
+            "y": "Antwerpen",
+            "x": -0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "Vlaanderen",
+            "x": 0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "Benelux",
+            "x": 0.0246643233345272,
+            "": ""
+          }
+
+        ],
+          "clientPosition": 1
+        }
+      },
+      {
+        "id": 2,
+        "name":"Aantal Programmeertalen",
+        "color":"red",
+        "recommendations": [
+          {
+            "id": "Voorgestelde actie 3",
+            "description": "Leer C++",
+           "percent": 0.02},
+           {"id": "Voorgestelde actie 4",
+           "description": "Leer Java",
+            "percent": 0.02}
+        ],
+        "distribution": { "segments": [
+          {
+            "y": "1",
+            "x": -0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "2",
+            "x": -0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "3",
+            "x": 0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "4",
+            "x": 0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "5",
+            "x": -0.0246643233345272,
+            "": ""
+          }
+
+        ],
+          "clientPosition": 0
+        }
+      }
+      ],
+    "nonactionnable": [
+      {
+        "id": 3,
+        "name":"Aantal dagen werkloos",
+        "color":"red",
+        "recommendations": [
+
+        ],
+        "distribution": { "segments": [
+          {
+            "y": "<10",
+            "x": 0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "10-30",
+            "x": 0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "30+",
+            "x": -0.0246643233345272,
+            "": ""
+          }
+        ],
+          "clientPosition": 0
+        }
+      }
+  ]
+},
+{
+  "id":"job2",
+  "name":"IT Manager",
+  "successValue": 0.3,
+  "potentialValue": 0.4,
+  "actionnable": [
+    {
+      "id": 5,
+      "name":"Jaren Ervaring Management",
+      "color":"red",
+      "recommendations": [
+        {
+          "id": "Voorgestelde actie 8",
+          "description": "Neem Management Cursus",
+         "percent": 0.05},
+         {
+           "id": "Voorgestelde actie 9",
+           "description": "Neem People Skills Cursus",
+          "percent": 0.05}
+      ],
+      "distribution": { "segments": [
+        {
+          "y": "<1",
+          "x": -0.0246643233345272,
+          "": ""
+        },
+        {
+          "y": "1-2",
+          "x": 0.0246643233345272,
+          "": ""
+        },
+        {
+          "y": "2+",
+          "x": 0.0246643233345272,
+          "": ""
+        }
+
+      ],
+        "clientPosition": 0
+      }
+    }
+  ]
+  }
+
+]

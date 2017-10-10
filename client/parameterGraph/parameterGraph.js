@@ -3,97 +3,141 @@ import chroma from 'chroma-js'
 Template.parameterGraph.onRendered(function(){
 
   var instance = this;
+  instance.autorun(function(){
 
-  var cPass = "#3BFD40";
-  var cTolerable= "#E1B32D";
-  var cFailed = "#FD686A";
-  var bar = "#CBCBCB";
-  var barSelect = "#020202";
-  var colorScale = chroma.scale(["#0099FF","#F566FF"]);
-  var maxHeight = 30;
-  var barWidth = 15;
 
-  //create basic graph without data
+console.log(Template.currentData());
+console.log(instance.data)
 
-  var svg = d3.select(this.find("svg"));
-  var startValues = [];
-  for(var i = 0;i <= 10; i++)
+var raw = Template.currentData().segments;
+
+
+  var segments = {};
+  // to identify continues... it's a string!
+
+  if(raw.length > 0 && typeof raw[0].y === 'string')
   {
-    startValues.push({block:i, realValue:i *20,  count:0});
+      for(var i = 0; i < raw.length;i++)
+      {
+        var offset=  raw[i].y;
+        var value = raw[i].x;
+        if(segments[offset] == undefined)
+          segments[offset] = {
+            name: offset,
+            dataPointCount:0,
+            total:0
+            };
+        segments[offset].dataPointCount++;
+        segments[offset].total += value;
+      }
   }
-  var max = 10; // real value
-  var userLocation = 1;
-  var g = svg.append("g");
-  var graph = g.selectAll("rect")
-                      .data(startValues);
-  var div = d3.select("body").append("div")
-      .attr("class", "tooltip")
-      .style("opacity", 0);
-  graph.enter().append("rect")
-                  .attr("height",function(d){
+  else {
+    var max = 0;
+    for(var i = 0; i < raw.length;i++)
+    {
+      if(raw[i].y > max) max = raw[i].y;
+    }
+    var definedSegments = []
+    for(var i=0;i < 10;i++)
+    {
+      definedSegments.push((i*max/10));
+    }
+    for(var i = 0; i < raw.length;i++)
+    {
+      var s = 0;
+      while(raw[i].y > definedSegments[s] && s < 9)
+        s++;
 
-                      return d.count/(max) * maxHeight;
-                  })
-                  .attr("width",function(d){
-                      return barWidth;
-                  })
-                  .attr("fill", function(d){
-                         if(d.block != userLocation)
-                            return bar;
-                         else {
-                           return barSelect;
-                         }
-                  })
-                  .attr("transform",function(d,i){
-                      var spacing = 2.0;
-                      return "translate(" + ((d.block) * spacing +   (d.block) * barWidth).toString() + ","+ (1.0 - d.count/max) * maxHeight+ ")";
-
-                  })
-                  .on("mouseover", function(d) {
-                div.transition()
-                    .duration(200)
-                    .style("opacity", .9);
-                div	.html("waarde: " + d.x + " " + "<br/>aantal: " + d.count)
-                    .style("left", (d3.event.pageX) + "px")
-                    .style("top", (d3.event.pageY - 28) + "px");
-                })
-            .on("mouseout", function(d) {
-                div.transition()
-                    .duration(500)
-                    .style("opacity", 0);
-            });
+      var offset=  definedSegments[s];
+      var value = raw[i].x;
+      if(segments[offset] == undefined)
+        segments[offset] = {
+          name: offset,
+          dataPointCount:0,
+          total:0
+          };
+      segments[offset].dataPointCount++;
+      segments[offset].total += value;
+    }
+  }
 
 
-});
+  var segments = Object.values(segments);
+  /*segments.sort(function(a,b){
+    if(a.name > b.name) return 1;
+    if(a.name < b.name) return -1;
+    return 0;
+  });*/
 
-updateParameterGraph = function(graph, userLocation, max)
-{
-  var bar = "#CBCBCB";
-  var barSelect = "#87D9E9";
+  segments.forEach(function(d){
+    var total = 0;
+    //console.log(d.minAverage, d.minNegative, d.maxAverage, d.maxPositive);
+    if(d.dataPointCount > 0)
+      d.average = d.total/d.dataPointCount;
+    if(typeof d.name != 'string')
+    {
+      console.log("st")
+      d.name *= 50;
+      d.name=d.name.toFixed(2);
+    }
+  })
+  var userLocation = Template.currentData().clientPosition;
 
-  var maxHeight = 30;
-  var barWidth = 15;
+
+  var distance = 300 / (segments.length+1);
+  var hundredpercentHeight = 80;
+  var position = userLocation;
+  var svg = d3.select(instance.find("svg"));
+  svg.selectAll("*").remove();
+
+  var MAX_VALUE = .10;
+  var MAX_PEOPLECOUNT = 300;
+
+  var MAX_WIDTH = 300;
+  var MARGIN = 20;
+  var MAX_HEIGHT = 50;
+  var MAX_RADIUS = 10;
+  var MIN_RADIUS = 1;
+
+  var xScale = d3.scaleLinear()
+                          .domain([0,segments.length-1])
+                          .range([MARGIN,MAX_WIDTH-MARGIN])
+                          .clamp(true);
+ var radiusScale = d3.scaleLinear()
+                         .domain([-MAX_VALUE, MAX_VALUE])
+                         .range([MIN_RADIUS,MAX_RADIUS])
+                         .clamp(true);
+  var opacityScale = d3.scaleLinear()
+                          .domain([0,MAX_PEOPLECOUNT])
+                          .range([.1,1])
+                          .clamp(true);
+  var binaryColor = function(d){ if(d<0) return "#E98686"; return "#B8E986";}
 
 
-  graph.transition()
-              .attr("height",function(d){
+  var graph = svg.selectAll("circle").data(segments);
 
-                  return d.count/(max) * maxHeight;
-              })
-              .attr("width",function(d){
-                  return barWidth;
-              })
-              .attr("fill", function(d){
-                     if(d.block != userLocation)
-                        return bar;
-                     else {
-                       return barSelect;
-                     }
-              })
-              .attr("transform",function(d,i){
-                  var spacing = 2.0;
-                  return "translate(" + ((d.block) * spacing +   (d.block) * barWidth).toString() + ","+ (1.0 - d.count/max) * maxHeight+ ")";
+  graph.enter().append("circle")
+    .attr("cx", function(d,i){return xScale(i)})
+    .attr("cy", MAX_HEIGHT/2)
+    .attr("r", function(d,i){
+      return 10;})//radiusScale(d.average)})
+    .attr("fill",function(d,i){return binaryColor(d.average)})
+    .attr("class",function(d,i){if(i==position) return "clientPosition";});
+    //.attr("fill-opacity",function(d,i){return opacityScale(d.average)});
 
-              })
-              ;
+  var texts = svg.selectAll("text").data(segments);
+  graph.enter().append("text")
+    .attr("text-anchor", "middle")
+    .attr("class",function(d,i){if(i==position) return "clientPosition axisText"; return "axisText";})
+
+    .attr("transform",function(d,i) { return "translate("+ xScale(i) +","+ MAX_HEIGHT +")"})
+    .text(function(d,i){return d.name});
+
+graph.exit().remove();
+
+
+
+
 }
+);
+});

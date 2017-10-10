@@ -1,0 +1,198 @@
+[
+  {
+    "id":"job1",
+    "name":"job1",
+    "successValue": 0.8,
+    "potentialValue": 0.98,
+    "actionnable": [
+      {
+        "id": 1,
+        "name":"Parameter 1",
+        "color":"green",
+        "recommendations": [
+          {
+            "id": "Voorgestelde actie 1",
+            "description": "Voorgestelde actie 1",
+           "percent": 0.01},
+           {"id": "Voorgestelde actie 2",
+           "description": "Voorgestelde actie 2",
+            "percent": 0.01}
+        ],
+        "distribution": { "segments": [
+          {
+            "y": "Groep 1",
+            "x": -0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "Groep 2",
+            "x": -0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "Groep 3",
+            "x": 0.0246643233345272,
+            "": ""
+          }
+
+        ],
+          "clientPosition": 2
+        }
+      },
+      {
+        "id": 2,
+        "name":"Parameter 2",
+        "color":"red",
+        "recommendations": [
+          {
+            "id": "Voorgestelde actie 3",
+            "description": "Voorgestelde actie 3",
+           "percent": 0.02},
+           {"id": "Voorgestelde actie 4",
+           "description": "Voorgestelde actie 4",
+            "percent": 0.02}
+        ],
+        "distribution": { "segments": [
+          {
+            "y": "Groep 1",
+            "x": 0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "Groep 2",
+            "x": -0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "Groep 3",
+            "x": 0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "Groep 4",
+            "x": -0.0246643233345272,
+            "": ""
+          }
+
+        ],
+          "clientPosition": 1
+        }
+      }
+      ],
+    "nonactionnable": [
+      {
+        "id": 3,
+        "name":"Parameter 3",
+        "color":"red",
+        "recommendations": [
+          {
+            "id": "Voorgestelde actie 5",
+            "description": "Voorgestelde actie 5",
+           "percent": 0.03},
+           {"id": "Voorgestelde actie 6",
+           "description": "Voorgestelde actie 6",
+            "percent": 0.03}
+        ],
+        "distribution": { "segments": [
+          {
+            "y": "Groep 1",
+            "x": -0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "Groep 2",
+            "x": -0.0246643233345272,
+            "": ""
+          }
+
+
+        ],
+          "clientPosition": 0
+        }
+      },
+      {
+        "id": 4,
+        "name":"Parameter 4",
+        "color":"green",
+        "recommendations": [
+          {
+            "id": "Voorgestelde actie 6",
+            "description": "Voorgestelde actie 6",
+           "percent": 0.03},
+           {"id": "Voorgestelde actie 7",
+           "description": "Voorgestelde actie 7",
+            "percent": 0.03}
+        ],
+        "distribution": { "segments": [
+          {
+            "y": "Groep 1",
+            "x": -0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "Groep 2",
+            "x": 0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "Groep 3",
+            "x": -0.0246643233345272,
+            "": ""
+          },
+          {
+            "y": "Groep 4",
+            "x": -0.0246643233345272,
+            "": ""
+          }
+
+
+        ],
+          "clientPosition": 1
+        }
+      }
+  ]
+},
+{
+  "id":"job2",
+  "name":"job2",
+  "successValue": 0.3,
+  "potentialValue": 0.4,
+  "actionnable": [
+    {
+      "id": 5,
+      "name":"Parameter 5",
+      "color":"red",
+      "recommendations": [
+        {
+          "id": "Voorgestelde actie 8",
+          "description": "Voorgestelde actie 8",
+         "percent": 0.05},
+         {"id": "Voorgestelde actie 9",
+         "description": "Voorgestelde actie 9",
+          "percent": 0.05}
+      ],
+      "distribution": { "segments": [
+        {
+          "y": "Groep 1",
+          "x": 0.0246643233345272,
+          "": ""
+        },
+        {
+          "y": "Groep 2",
+          "x": 0.0246643233345272,
+          "": ""
+        },
+        {
+          "y": "Groep 3",
+          "x": -0.0246643233345272,
+          "": ""
+        }
+
+      ],
+        "clientPosition": 2
+      }
+    }
+  ]
+  }
+
+]

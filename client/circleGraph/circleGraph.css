@@ -3,7 +3,12 @@
   text-align: center;
 }
 
-circle.potential, circle.selectedpotential
+circle.potential
 {
   opacity: .2;
+}
+
+circle.selectedpotential
+{
+  opacity: .5
 }
